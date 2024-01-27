@@ -16,7 +16,7 @@
 }
 
 #let githublink(userRepo) = {
-  link("https://github.com/" + userRepo)[#fa[#github] #userRepo]
+  link("https://github.com/" + userRepo)[#userRepo]
 }
 
 // https://github.com/typst/typst/issues/1987#issuecomment-1690672386
@@ -55,7 +55,7 @@
   show heading.where(
     level: 1
   ): set text(
-    size: 18pt,
+    size: 20pt,
     weight: "light",
   )
 
@@ -67,7 +67,7 @@
   show heading.where(
     level: 2
   ): it => text(
-    size: 12pt,
+    size: 13pt,
     font: the-font,
     weight: "bold",
     block(
@@ -76,7 +76,7 @@
   )
   set list(indent: 0pt)
   set text(
-    size: 9pt,
+    size: 11pt,
     font: the-font
   )
 
