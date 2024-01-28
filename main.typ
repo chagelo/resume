@@ -67,7 +67,7 @@
   let bitcask = {
     translate(
       zh: cventry(
-        tl: [*bitcask*，基于 GO 实现的 bitcask 存储引擎。],
+        tl: [*bitcask*，基于 GO 实现的 bitcask 存储引擎],
         tr: githublink("chagelo/bitcask-go"),
       )[
         - 磁盘：将标准文件操作 API 进行简单封装，使用 hintfile 提高加载索引速度，通过 mmap 提高读取数据效率
@@ -81,9 +81,9 @@
   let mabs = {
     translate(
       zh: cventry(
-        tl: [*MABS*，基于扩散模型的核磁图像去运动伪影。],
+        tl: [*MABS*，基于扩散模型的核磁图像去运动伪影],
         tr: githublink("chagelo/mabs"),
-      )[通过在模拟数据上进行有监督训练，为 DDPM 生成一个更好的 Guidance，进而提高 DDPM 的降噪结果],
+      )[通过在模拟数据上进行有监督训练，为 DDPM 生成一个更好的 Guidance，进而提高 DDPM 的降噪效果],
     )
   }
 
@@ -91,7 +91,7 @@
   let shasm4 = {
     translate(
       zh: cventry(
-        tl: [*Sha-512-SM4-block-chiper*，基于 SHA-512 和 SM4 的 C++ 实现的分组加密。],
+        tl: [*Sha-512-SM4-block-chiper*，基于 SHA-512 和 SM4 的 C++ 实现的分组加密],
         tr: githublink("chagelo/Sha-512-SM4-block-chiper"),
       )[ - 通过用户输入的唯一的密码对文件加密解密
          - 首次结合了 SHA-512 和 SM4 密码算法，SHA-512 对用户输入的密码进行加密，将结果作为 SM4 的密钥，对文件、视频等进行分组加密，
