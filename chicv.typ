@@ -83,7 +83,6 @@
   show link: it => underline(offset: 2pt, it)
   set page(
    margin: (x: 0.5cm, y: 0.9cm),
-   numbering: "1 / 1"
   )
   set par(justify: true)
 

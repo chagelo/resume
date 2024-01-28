@@ -55,9 +55,9 @@
         tl: [*CMU15-445*，面向磁盘的单机关系型数据库],
         tr: githublink("chagelo/bustub-database"),
       )[
-      - 内存：基于 LRU-K 页面替换策略设计 Buffer Pool，
+      - 内存：基于 LRU-K 页面替换策略设计 Buffer Pool
       - 索引：基于 B+ 树，实现非聚簇索引，利用每个节点独立的读写锁兼顾了多线程并发访问的安全性和效率，支持通过迭代器对数据进行基于关键字的范围查找
-      - 执行器：采用火山模型，实现了多种语句的执行器，如 Aggregate、GROUP BY、TopN 等
+      - 执行器：采用火山模型，实现了多种语句的执行器，如 Aggregate、Group By、TopN 等
       - 优化器：进行了简单的优化，将 NestedLoopJoin 优化为 HashJoin
       - 并发控制：基于 2PL 设计 LockManager，支持 RR, RC, RU 三种事务隔离级别和表、行两种粒度的五种锁类型，实现死锁的检测和解除
       ],
@@ -118,7 +118,7 @@
          - 编程语言：熟悉 C++, 熟悉 STL
          - 算法：熟悉常用基础算法，熟悉部分图论算法和高级数据结构
          - 数学：熟练掌握高等数学、熟悉初等数论
-         - 工具：熟悉 git 使用，熟悉部分 git 常用命令
+         - 工具：熟悉 git 使用，熟悉部分 linux 常用命令
          - 数据库：熟悉 leveldb、bitcask
         ],
     )
