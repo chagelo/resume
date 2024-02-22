@@ -10,6 +10,9 @@ Build on Windows: install the latest version of typst and `fonts/FontAwesome6.ot
 
 Build on Linux: you're on your own. PR welcome.
 
+
+hint：在 linux 下构建中文版本时，你应该首先拥有对应的字体，你可以将 windows 下的字体拷贝安装到你的 linux 环境下
+
 # Download/下载
 
 + [English one-page version (PDF)](./resume.pdf)
