@@ -3,7 +3,7 @@
 This is my resume, based on [Matchy's template](https://github.com/matchy233/typst-chi-cv-template) & [ice1000](https://github.com/ice1000/resume).
 I'll no longer be using Haskell + $\LaTeX$ to build my resume. Typst exists and it's 114514 times better than $\LaTeX$.
 
-Build on Windows: install the latest version of typst and `fonts/FontAwesome6.otf` from Matchy's template linked above, then run `build-win.bat`.
+Build on Windows: install the latest version of typst and `fonts/FontAwesome6.otf` from Matchy's template linked above, then run `typst compile resume-cn.typ`.
 
 Build on Linux: you're on your own. PR welcome.
 
