@@ -17,7 +17,6 @@ echo '#runReader(Simplified)' >> "resume.typ"
 echo '#runReader(EnglishFull)' >> "resume-elab.typ"
 
 for f in "${files[@]}"; do
-  echo "Building $f.typ"
   typst compile "$f.typ"
-  rm "$f.typ"
+  # rm "$f.typ"
 done

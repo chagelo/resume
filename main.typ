@@ -29,23 +29,36 @@
   )
 
   let edu = {
-    translate(en: [== Education], zh: [== 教育经历])
+    translate(en: [== Education], zh: [== #text(weight: "bold")[教育经历]])
     let gpa1 = 3.56
     let psu-date = [#translate-date(9, 2021) -- #current]
     translate(
       zh: cventry(
-        tl: [中国科学与技术大学，计算机科学与技术，硕士],
+        tl: [#text(weight: "bold")[中国科学技术大学]，计算机科学与技术，硕士],
         tr: psu-date,
-      )[导师：S. Kevin Zhou, GPA #gpa1/4.10]
+      )[]
+    )
+    translate(
+      zh: cventry(
+        tl: [研究方向：计算机视觉, GPA #gpa1/4.10],
+        tr: [合肥，安徽],
+      )[]
     )
 
-    let gpa2 = 4.10
+    let gpa2 = 4.30
     let cmu-date = [#translate-date(9, 2017) -- #translate-date(6, 2021)]
     translate(
       zh: cventry(
-        tl: [常州大学，计算机科学与技术，本科],
+        tl: [#text(weight: "bold")[常州大学]，计算机科学与技术，本科],
         tr: cmu-date,
-      )[GPA #gpa2/5.00],
+      )[]
+    )
+
+    translate(
+      zh: cventry(
+        tl: [GPA #gpa2/5.00],
+        tr: [常州，江苏],
+      )[]
     )
   }
 
@@ -67,7 +80,7 @@
   let bitcask = {
     translate(
       zh: cventry(
-        tl: [*bitcask*，基于 GO 实现的 bitcask 存储引擎],
+        tl: [*Bitcask*，面向内存的 bitcask kv 存储引擎],
         tr: githublink("chagelo/bitcask-go"),
       )[
 - 磁盘：将标准文件操作 API 进行简单封装，使用 hintfile 提高加载索引速度，通过 mmap 提高读取数据效率
@@ -75,6 +88,19 @@
 - 文件 merge：通过文件 merge 对无效数据进行清理，定期 merge 节省磁盘空间，提高数据库启动时加载速度
 - 事务：实现了串行化的事务，满足 ACID 特性
       ],
+    )
+  }
+
+  let tinykv = {
+    translate(
+      zh: cventry(
+        tl: [*Tinykv*, 支持横向扩展、高可用，支持分布式事务的 kv 数据库],
+        tr: githublink("chagelo/tinykv"),
+      )[
+        - Raft 层，支持 Leader 选举、日志复制、单步成员变更、Snapshot 等基础功能
+        - 采用 Multi-Raft 架构，数据基于 Region 进行分区，每个 Region 组成一个 Raft Group。当数据规模不断增大，Region 支持自动分裂
+        - 实现了 MVCC 多版本控制，基于 Percolator 模型设计了分布式事务系统
+      ]
     )
   }
 
@@ -104,10 +130,10 @@
   let honors = {
     translate(
       zh: [ 
-         - *铜奖*, 2019 年第 44 届 ACM-ICPC 亚洲区域赛银川站
-         - *银奖*, 2019 年 CCPC 江苏赛区
-         - *一等奖*, 2020 年第 17 届江苏省高等数学竞赛
-         - *一等奖*, 2019 年蓝桥杯江苏省赛
+         - #text(weight: "bold")[铜奖], 2019 年第 44 届 ACM-ICPC 亚洲区域赛银川站
+         - #text(weight: "bold")[银奖], 2019 年 CCPC 江苏赛区
+         - #text(weight: "bold")[一等奖], 2020 年第 17 届江苏省高等数学竞赛
+         - #text(weight: "bold")[一等奖], 2019 年蓝桥杯江苏省赛
         ],
     )
   }
@@ -115,11 +141,10 @@
   let skills = {
     translate(
       zh: [ 
-         - 编程语言：熟悉 C++，熟悉 STL
+         - 编程语言：熟悉 C++，熟悉 STL，了解 Rust、Python
          - 算法：熟悉常用基础算法，熟悉部分图论算法和高级数据结构
-         - 数学：熟练掌握高等数学，熟悉初等数论
          - 工具：熟悉 git 使用，熟悉部分 linux 常用命令
-         - 数据库：熟悉 leveldb、bitcask，学习 MIT 6.824 及 CMU 15445 课程
+         - 数据库&分布式：熟悉 leveldb、bitcask，熟悉 Raft
         ],
     )
   }
@@ -136,15 +161,16 @@
 
   // Start of the document
 
-  translate(en: [= #smallcaps[Tesla Zhang]], zh: [= 刘远东])
+  translate(en: [= #smallcaps[Yuandong Liu]], zh: [= #text(weight: "bold")[刘远东]])
 
-  [#link("mailto:changeto104@gmail.com")[changeto104\@gmail.com] $dot.c$ #link("https://github.com/chagelo", "https://github.com/chagelo")$dot.c$ #link("tel:+8613245078962")[+8613245078962]]
+  [#link("mailto:yuggu_cs@outlook.com")[yuggu_cs\@outlook.com] $dot.c$ #link("https://github.com/chagelo", "https://github.com/chagelo")$dot.c$ #link("tel:+8613245078962")[+8613245078962]]
 
   edu
 
   translate(en: [== Related Projects], zh: [== 项目经历])
   cmu15445
   bitcask
+  tinykv
   mabs
   shasm4
 
