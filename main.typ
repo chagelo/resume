@@ -70,8 +70,8 @@
       )[
       - 内存：基于 LRU-K 页面替换策略设计 Buffer Pool
       - 索引：基于 B+ 树，实现非聚簇索引，利用每个节点独立的读写锁兼顾了多线程并发访问的安全性和效率，支持通过迭代器对数据进行基于关键字的范围查找
-      - 执行器：采用火山模型，实现了多种语句的执行器，如 Aggregate、Group By、TopN 等
-      - 优化器：进行了简单的优化，将 NestedLoopJoin 优化为 HashJoin
+      - 执行器：实现了多种语句的执行器，如 Aggregate、Group By、TopN 等
+      - 优化器：将 NestedLoopJoin 优化为 HashJoin，Filter 下推，去除 Filter 中存在的常量表达式
       - 并发控制：基于 2PL 设计 LockManager，支持 RR, RC, RU 三种事务隔离级别和表、行两种粒度的五种锁类型，实现死锁的检测和解除
       ],
     )

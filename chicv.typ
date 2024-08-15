@@ -76,7 +76,7 @@
   )
   set list(indent: 0pt)
   set text(
-    size: 11pt,
+    size: 10pt,
     font: the-font
   )
 
