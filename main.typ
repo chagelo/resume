@@ -36,13 +36,22 @@
       zh: cventry(
         tl: [#text(weight: "bold")[中国科学技术大学]，计算机科学与技术，硕士],
         tr: psu-date,
+      )[],
+      en: cventry(
+        tl: [#text(weight: "bold")[University of Science and Technology of China], computer and science techology, Master],
+        tr: psu-date,
       )[]
     )
     translate(
       zh: cventry(
         tl: [研究方向：计算机视觉, GPA #gpa1/4.10],
         tr: [合肥，安徽],
+      )[],
+      en: cventry(
+        tl: [Research direction: computer vision, GPA #gpa1/4.10],
+        tr: [Hefei, Anhui, China]
       )[]
+
     )
 
     let gpa2 = 4.30
@@ -51,6 +60,10 @@
       zh: cventry(
         tl: [#text(weight: "bold")[常州大学]，计算机科学与技术，本科],
         tr: cmu-date,
+      )[],
+      en: cventry(
+        tl: [#text(weight: "bold")[Changzhou University], computer and science techology, Bachelor],
+        tr: cmu-date,
       )[]
     )
 
@@ -58,6 +71,10 @@
       zh: cventry(
         tl: [GPA #gpa2/5.00],
         tr: [常州，江苏],
+      )[],
+      en: cventry(
+        tl: [GPA #gpa2/5.00],
+        tr: [Changzhou, JiangSu, China],
       )[]
     )
   }
@@ -74,6 +91,16 @@
       - 优化器：将 NestedLoopJoin 优化为 HashJoin，Filter 下推，去除 Filter 中存在的常量表达式
       - 并发控制：基于 2PL 设计 LockManager，支持 RR, RC, RU 三种事务隔离级别和表、行两种粒度的五种锁类型，实现死锁的检测和解除
       ],
+      en: cventry(
+        tl: [*Bustub*, Disk Oriented Relational Database Management System],
+        tr: githublink("chagelo/bustub-database"),
+      )[
+        - Memory: Designed a Buffer Pool based on LRU-K page evicted strategy.
+        - Inedx: Implemented a B+ index tree, implemented clustered index. Utilized per-node read-write locks to balance multi-threaded concurrency safety and efficiency, supported range queries based on keywords through iterators.
+        - Executor: Implemented many SQL executor, such as Aggregate, Group By, TopN and so on.
+        - Optimizer: Optimized the NestedLoopJoin to HashJoin, pushed down Filter and remove the constant expression in condition queries.
+        - Concurrency control: Designed a LockManager based on 2PL, supported RR, RC and RU these three transaction isolation levels and five lock types at table and row granularity, implemented deadlock dection and resolution.
+      ]
     )
   }
 
@@ -86,8 +113,11 @@
 - 磁盘：将标准文件操作 API 进行简单封装，使用 hintfile 提高加载索引速度，通过 mmap 提高读取数据效率
 - 索引：支持 B 树，ART，B+ 树三种索引结构
 - 文件 merge：通过文件 merge 对无效数据进行清理，定期 merge 节省磁盘空间，提高数据库启动时加载速度
-- 事务：实现了串行化的事务，满足 ACID 特性
       ],
+      en: cventry(
+        tl: [*Bitcask*, Disk Oriented Bitcask KV Storage Engine Based on Memory],
+        tr: githublink("chagelo/bitcask-go"),
+      )[ Implemented the memory based storage engine, supported put and get operations.]
     )
   }
 
@@ -100,7 +130,15 @@
         - Raft 层，支持 Leader 选举、日志复制、单步成员变更、Snapshot 等基础功能
         - 采用 Multi-Raft 架构，数据基于 Region 进行分区，每个 Region 组成一个 Raft Group。当数据规模不断增大，Region 支持自动分裂
         - 实现了 MVCC 多版本控制，基于 Percolator 模型设计了分布式事务系统
-      ]
+      ],
+      en: cventry(
+        tl: [*Tinykv*, Horizontally Scalable, Highly Available Key-Value Database with Distributed Transaction Support],
+        tr: githublink("chagelo/tinykv"),
+      )[
+      - Raft level, supported Leader Election, Log Replication, Single Membership Change and so on.
+      - Multi-Raft architecture with region-based partitioning and automatic region splitting.
+      - MVCC-based concurrency control and Percolator-inspired distributed transactions.
+      ],
     )
   }
 
@@ -110,8 +148,15 @@
         tl: [*MABS*，基于扩散模型的核磁图像去运动伪影],
         tr: githublink("chagelo/mabs"),
       )[通过在模拟数据上进行有监督训练，为 DDPM 生成一个更好的 Guidance，进而提高 DDPM 的降噪效果],
+      en: cventry(
+        tl: [*MABS*，DDPM-based MRI Motion Artifact Removal],
+        tr: githublink("chagelo/mabs"),
+      )[
+        Used simulated clean and motioned data to generate a better denoised image, then used this image to guide DDPM, finally got a great denoised result from real world MRI.
+      ]
     )
   }
+
 
 
   let shasm4 = {
@@ -124,6 +169,15 @@
          - 实现了 ECB、CBC、CFB、OFB、CTR 分组加密模式
          - 支持对任意文件类型、大小加密解密
         ],
+      en: cventry(
+        tl: [*Sha-512-SM4-block-chiper*，Block Chiper Based on SHA512 and SM4 algorithm],
+        tr: githublink("chagelo/Sha-512-SM4-block-chiper"),
+      )[
+        - Encrypted and decrypted files with a single user-provied password
+        - Combined SHA512 and SM4 for the first time, used SHA512 to encrypt the user input password and regarded result as key of SM4 to encrypt the files or videos in blocks.
+        - Implemented ECB, CBC, CFB, OFB and CTR block chiper mode.
+        - Supported encryption and decryption of files of any type and size.
+      ]
     )
   }
 
@@ -135,6 +189,12 @@
          - #text(weight: "bold")[一等奖], 2020 年第 17 届江苏省高等数学竞赛
          - #text(weight: "bold")[一等奖], 2019 年蓝桥杯江苏省赛
         ],
+      en: [
+        - *Bronze Medal*, 44th ACM-ICPC Asia Regional Contest Ningxia Station
+        - *Silver Medal*, 2019 CCPC Jiangsu Provincial Contest
+        - *First Prize*, 17th Jiangsu Provincial Advanced Mathematics Competition 2020
+        - *First Prize*, 2019 Lanqiao Cup Jiangsu Provincial Contest
+      ]
     )
   }
 
@@ -146,6 +206,12 @@
          - 工具：熟悉 git 使用，熟悉部分 linux 常用命令
          - 数据库&分布式：熟悉 leveldb、bitcask，熟悉 Raft
         ],
+      en: [
+        - Programming Languages: C++ (Proficient), Rust, Python
+        - Algorithms: Proficient in basic algorithms, graph theory, and advanced data structures
+        - Tools: Proficient in Git and familiar with Linux basics
+        - Database & Distributed Systems: Familiar with transactions, LevelDB, Bitcask, and Raft,
+      ]
     )
   }
 
@@ -154,6 +220,9 @@
       zh: [
         - #link("https://chagelo.github.io/", "git pages")
         - #link("https://www.cnblogs.com/shinidetiehanhan", "博客园 chagelo")
+      ],
+      en: [
+        - #link("https://chagelo.github.io/", "git pages")
       ]
     )
    
@@ -161,7 +230,7 @@
 
   // Start of the document
 
-  translate(en: [= #smallcaps[Yuandong Liu]], zh: [= #text(weight: "bold")[刘远东]])
+  translate(en: [= #text(weight: "bold")[Yuandong Liu]], zh: [= #text(weight: "bold")[刘远东]])
 
   [#link("mailto:yuggu_cs@outlook.com")[yuggu_cs\@outlook.com] $dot.c$ #link("https://github.com/chagelo", "https://github.com/chagelo")$dot.c$ #link("tel:+8613245078962")[+8613245078962]]
 
@@ -174,7 +243,7 @@
   mabs
   shasm4
 
-  translate(zh: [== 荣誉])
+  translate(en: [== Honors], zh: [== 荣誉])
   honors
 
   translate(en: [== Skills], zh: [== 技能])

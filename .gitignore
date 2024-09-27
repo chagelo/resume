@@ -3,7 +3,9 @@
 .idea/
 .vs/
 .vscode/
+*pdf
 
 ## Emacs/Vim ##
 
 *~
+
